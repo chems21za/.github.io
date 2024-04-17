@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulaire de réservation</title>
+<link rel="stylesheet" href="style3.css">
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+          <div class="logo">
+            <img src="images/logobre.png" alt="Votre logo">
+          </div>
+          <h2>Réservation d'hôtel</h2>
+          <form id="reservationForm">
+            <div class="form-group">
+              <label for="nom">Nom :</label>
+              <input type="text" id="nom" name="nom" required>
+            </div>
+            <div class="form-group">
+              <label for="prenom">Prénom :</label>
+              <input type="text" id="prenom" name="prenom" required>
+            </div>
+            <div class="form-group">
+              <label for="tel">Numéro de téléphone :</label>
+              <input type="text" id="tel" name="tel" required>
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail :</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="hotel">Hôtel :</label>
+              <input type="text" id="hotel" name="hotel" required>
+            </div>
+            <div class="form-group">
+              <label for="nuit">Nombre de nuits :</label>
+              <input type="number" id="nuit" name="nuit" min="1" required>
+            </div>
+            <div class="form-group">
+              <label for="personnes">Nombre de personnes :</label>
+              <input type="number" id="personnes" name="personnes" min="1" required>
+            </div>
+            <button type="submit">Soumettre</button>
+          </form>
+        </div>
+      </div>
+
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+<script>
+  // Initialise EmailJS avec votre User ID
+  emailjs.init('6sp_WRsPWtELU1rj3');
+
+  document.getElementById('reservationForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Empêche la soumission du formulaire par défaut
+
+    // Récupération des valeurs des champs
+    var nom = document.getElementById('nom').value;
+    var prenom = document.getElementById('prenom').value;
+    var tel = document.getElementById('tel').value;
+    var email = document.getElementById('email').value;
+    var hotel = document.getElementById('hotel').value;
+    var nuit = document.getElementById('nuit').value;
+    var personnes = document.getElementById('personnes').value;
+
+    // Envoi de l'e-mail via EmailJS
+    emailjs.send('service_jk841jbc', 'template_nry8xaj', {
+      nom: nom,
+      prenom: prenom,
+      email: email,
+      hotel: hotel,
+      nuit: nuit,
+      personnes: personnes,
+      tel : tel ,
+    })
+    .then(function(response) {
+      console.log('E-mail envoyé avec succès:', response);
+      alert('Votre réservation a été envoyée avec succès !');
+    }, function(error) {
+      console.error('Erreur lors de l\'envoi de l\'e-mail:', error);
+      alert('Une erreur est survenue lors de l\'envoi de votre réservation.');
+    });
+  });
+</script>
+</body>
+</html>

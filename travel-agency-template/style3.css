@@ -1,0 +1,68 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('https://www.google.com/url?sa=i&url=https%3A%2F%2Fstock.adobe.com%2Ffr%2Fsearch%3Fk%3D%2522website%2Bbackground%2522&psig=AOvVaw0Es7J5nz9h8koHeb3nvvdj&ust=1711808110308000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCJDK8qbUmYUDFQAAAAAdAAAAABAE');
+
+    background-size: cover;
+    background-position: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .card {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  .logo {
+    margin-bottom: 20px;
+  }
+  
+  .logo img {
+    width: 100px; /* Ajustez la taille du logo selon vos besoins */
+  }
+  /* Style pour les champs de saisie */
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* Style pour les boutons */
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/* Style pour les étiquettes */
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Alignement linéaire des éléments du formulaire */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
